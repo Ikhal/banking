@@ -1,4 +1,4 @@
-package main
+package app
 
 import (
 	"encoding/json"
@@ -9,15 +9,16 @@ import (
 	
 )
 
-type Customer struct{
-	Name		string	`json: "full_name" xml:"name"`
-	City		string 	`json:  "city" xml:"city"`
-	Zipcode		string	`json: 	"zip_code" xml:"zipcode"`
+type Customer struct {
+	Name    string `json:"full_name" xml:"name"`
+	City    string `json:"city" xml:"city"`
+	Zipcode string `json:"zip_code" xml:"zipcode"`
 }
+
 
 func greet (w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "Hello world")
-}
+}  
 
 func getAllCustomers(w http.ResponseWriter, r *http.Request)  {
 	customers := []Customer {
